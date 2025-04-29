@@ -18,6 +18,76 @@ img, picture, video, canvas, svg{
 /* flex box froggy to learn layout!! */
 /* ------------------------------------ */
 
+/* PORTFOLIO */
+@font-face {
+  font-family: 'Boone';
+  src: url('assets/fonts/BOONE.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PeachyFantasy';
+  src: url('assets/fonts/PeachyFantasy.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Regano';
+  src: url('assets/fonts/Regano.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bronzion';
+  src: url('assets/fonts/BronzionBlackPersonalUseRegular-E44zl.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title{
+  font-family: 'Bronzion';
+  font-size: 4rem;
+}
+
+.home{
+  font-family: 'Bronzion';
+  background-color: #000000;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1{
+  font-family: 'Boone';
+}
+
+h2{
+  font-family: 'Boone';
+}
+
+h3{
+  font-family: 'Boone';
+}
+
+h4{
+  font-family: 'Boone';
+}
+
+h5{
+  font-family: 'Boone';
+}
+
+/* PORTFOLIO */
+
 :root {
   --base-bg: #f2f2f2;
   --base-text: #000000;
@@ -54,6 +124,12 @@ img, picture, video, canvas, svg{
   align-items: center;
   background-color: var(--base-bg);
   color: var(--base-text);
+
+  /* PORTFOLIO */
+  overflow-x: hidden;
+  position: relative;
+  /* PORTFOLIO */
+
 }
 
 .top{

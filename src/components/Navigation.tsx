@@ -24,6 +24,8 @@ function Navigation({refs, titles}: NavigationProps) {
         // defaultActiveKey="0"
         className="section-navigation"
         >
+        <a href="file:///Users/Elise/Desktop/code/portfolio%20website/projects.html"><h1 className='home'>Home</h1></a>
+
         <Accordion.Item 
         eventKey="0"
         style={{
@@ -38,9 +40,9 @@ function Navigation({refs, titles}: NavigationProps) {
             {
                 titles.map((title, index) => (
                     <Button 
-                    style={{width: "100px", display: "block"}}
+                    style={{width: "100px", display: "block", alignItems: "center", justifyContent: "center" }}
                     variant={isDarkMode ? "secondary" : "dark"} onClick={() => scrollToSection(refs[index])} className="w-100 mb-3" >
-                    {title}
+                    <h3 style={{fontSize: "1rem"}}>{title}</h3>
                     </Button>
                 ))
             }

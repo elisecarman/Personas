@@ -57,7 +57,10 @@ function Personas() {
         <div>
             <Navigation refs={refs} titles={titles}/>
             <Section first={true} ref={section1Ref}>
-                <h1 style={{marginBottom: "3rem"}}>Personas & Storyboarding</h1>
+                <Row>
+                
+                <Col style={{zIndex: 4}}>
+                <h1 className="title" style={{marginBottom: "3rem"}}>Personas & Storyboarding</h1>
                 <h2 style={{marginBottom: "6rem"}}>Who are supermarkets for?</h2>
                 <Row>
                 <Col>
@@ -100,8 +103,11 @@ function Personas() {
                     What sacrifices must be made?<br></br>
                     Let's study different user behaviors in supermarkets, and find out more about our user needs!
                 </Callout>
-                
-                
+                </Col>
+                <Col>
+                    <Image style={{position: "absolute", width: "800px", marginTop: "-50px", marginLeft: "-100px", zIndex: 1}} src="src/assets/portfolio/phone-guy.png"></Image>
+                </Col>
+                </Row>
             </Section>
             <Section first={false} ref={section2Ref}>
                 <h1>The interface</h1>
