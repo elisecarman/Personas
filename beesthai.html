@@ -1,0 +1,2821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Description of the page">
+    <meta name="author" content="Your Name">
+    <title>Page Title</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to a favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Include external libraries if needed -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+    <style>
+      html{
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background: linear-gradient(to bottom, #F7915E, #ffbf57, #e291af);
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+      }
+      main{
+        flex: 1;
+      }
+      header {
+          background-color: #F8F3F1;
+          color: #000000;
+          position: fixed;
+          z-index: 1000;
+          width: 100%;
+      }
+
+      .page{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* width: auto; */
+      }
+
+      .page-container{
+        max-width: 1500px;
+        width: 100vw;
+        padding: 0rem 8rem;
+        /* display: flex;
+        flex-direction: row; */
+      }
+
+      nav{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-shadow: 0px 0px 20px #A94112;
+        color: #b40303;
+
+      }
+
+      .nav-link-bootleg{
+        padding-right: 1rem;
+        padding-left: 1rem;
+        text-decoration: none;
+        color: #A94112;
+      }
+
+      .nav-link-bootleg:hover{
+        padding-right: 1rem;
+        padding-left: 1rem;
+        text-decoration: underline;
+        color: #A94112;
+      }
+
+      .nav-link-bootleg.active{
+        padding-right: 1rem;
+        padding-left: 1rem;
+        text-decoration: underline;
+        color: #A94112;
+      }
+
+      .logo{
+        /* font-family: Georgia, 'Times New Roman', Times, serif; */
+        font-size: 1.5rem;
+        font-weight: lighter;
+        color: #A94112;
+      }
+
+      
+
+      /* .menu-nav{
+        top: 65px;
+        display: flex;
+        margin: 0rem 0rem;
+        flex-wrap: wrap;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        max-width: 1500px;
+      } */
+
+      .left-panel{
+        margin-left: -90px;
+        margin-right: 90px;
+      }
+
+      .menu-nav{
+        right: 5px;
+        top: 65px;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin: 0rem 0rem;
+        flex-wrap: wrap;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        /* max-width: 1500px; */
+        max-width: 180px;
+        font-size: .9rem;
+        justify-content: center;
+      }
+
+      .menu-nav-toggle{
+        display: none;
+      }
+
+      .menu-button{
+        margin: 5px 10px;
+      }
+
+      .menu-button a{
+        display: flex;
+        text-decoration: none;
+        background-color: #F8F3F1;
+        border-radius: 20px;
+        color: #A94112;
+        padding: 5px 10px;
+      }
+
+      /* ELISE TODO: fix hover */
+      .menu-button a:hover{
+        transition: .3s;
+        background-color: #A94112;
+        color: #F8F3F1;
+      }
+
+      .callout{
+        background-color: #F8F3F1;
+        border-radius: 20px;
+        padding: 2rem 6rem;
+        /* margin-left: 10rem;
+        margin-right: 10rem; */
+        margin-top: 6rem;
+        margin-bottom: 2rem;
+        justify-content: center;
+        display: flex;
+        color: #A94112;
+        font-size: 1rem;
+        line-height: 1.8rem;
+        opacity: .8;
+        /* box-shadow: inset 0px 0px 15px #F7915E; */
+
+      }
+
+      .section-title{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 4rem;
+        font-weight: lighter;
+        color: #F8F3F1;
+        display: flex;
+        justify-content: center;
+        margin: 0rem 2rem;
+        line-height: 4rem;
+      }
+
+      .section-description{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 1.3rem;
+        font-weight: lighter;
+        color: #6f2d0e;
+        margin: 0rem 2rem;
+        /* max-width: 1200px; */
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .section{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 10rem;
+      }
+
+      .section-container{
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* padding: 0rem 6rem; */
+        gap: 0;
+        /* width: fit-content; */
+        /* justify-content: space-around; */
+        /* justify-content: start; */
+        justify-content: center;
+      }
+
+      .section-item{
+        background-color: #F8F3F1;
+        border-radius: 20px;
+        padding: 1rem;
+        color: #A94112;
+        height: auto;
+        width: auto;
+        min-width: 200px;
+        margin: 0.5rem;
+        row-gap: 0.5rem;
+        font-size: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+      }
+
+      .section-item-protein{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .section-item-icons{
+        display: flex;
+        justify-content: center;
+      }
+
+      .b-tooltip {
+       visibility: visible;
+       margin: 0.2rem;
+      }
+
+      .b-tooltip-text {
+        visibility: hidden;
+        background-color: #A94112;
+        color: #F8F3F1;
+        position: absolute;
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 5px;
+        width: 110px;
+        margin-top: 45px;
+        margin-left: -77px;
+        /* transform: translateX(-70%) translateY(-40px); */
+        opacity: 0;
+        transition: opacity 0.3s; 
+      }
+
+      .b-tooltip:hover .b-tooltip-text {
+        visibility: visible;
+        opacity: 0.9;
+      }
+
+      .icon{
+        width: 45px;
+        border-radius: 50%;
+      }
+
+      #togglePanelButton {
+        display: none;
+      }
+
+      .side-panel {
+        display: none;
+      }
+
+      @media (min-width: 1500px){
+        .menu-nav{
+        right: calc(50% - 750px);
+        top: 65px;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin: 0rem 0rem;
+        flex-wrap: wrap;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        /* max-width: 1500px; */
+        max-width: 180px;
+        font-size: .9rem;
+        justify-content: center;
+      }
+      }
+      @media (max-width: 843px) {
+
+
+        .page-container{
+        padding: 0rem;
+        }
+
+        .left-panel{
+        /* transform: translateX(0px); */
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+
+        .section-title{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 2rem;
+        font-weight: lighter;
+        color: #F8F3F1;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin: 0rem 2rem;
+        line-height: 4rem;
+        }
+
+        .logo{
+          font-size: 1rem;
+        }
+
+        .section-description{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 1.1rem;
+        font-weight: lighter;
+        color: #6f2d0e;
+        margin: 0rem 2rem;
+        /* max-width: 1200px; */
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .sub-section-description{
+        max-width: 1000px; 
+        text-align: center;
+      }
+
+        .section {
+          display: flex;
+          flex-direction: row;
+          /* justify-content: center; */
+          justify-content: start;
+          margin-bottom: 5rem;
+          /* Enable horizontal scrolling for the .section element */
+          overflow-x: auto;
+          white-space: nowrap; /* Prevent child elements from wrapping */
+          box-shadow: inset 0px 0px 10px #db7b4b;
+          /* background-color: #F8F3F1;
+          opacity: .4; */
+        }
+
+        .section-container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap; /* Prevent wrapping to maintain horizontal layout */
+          padding: 0rem 2rem;
+          gap: 1rem; /* Set a specific gap for spacing, 'auto' doesn't work here */
+          /* width: max-content; Ensure content inside the container dictates width */
+          justify-content: start;
+          /* Optional: You can also enable scrolling here */
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+
+        .section-item{
+          background-color: #F8F3F1;
+          border-radius: 20px;
+          padding: 1rem;
+          color: #A94112;
+
+          height: auto;
+          width: auto;
+          margin: 0.5rem;
+          row-gap: 0.5rem;
+          font-size: 1.1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center; 
+          opacity: 1;  
+          white-space: normal;     
+        }
+
+        nav{
+          display: flex;
+          justify-content: space-between;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          box-shadow: 0px 0px 0px #A94112;
+
+        }
+        .menu-nav{
+          display: none;
+          /* display: initial;
+          position: fixed;
+          z-index: 1000; 
+          left: -3rem;
+          width: 70px; */
+        }
+        
+        .menu-nav-toggle{
+          /* display: none; */
+          display: initial;
+          position: fixed;
+          z-index: 1000; 
+          top: 90%;
+          left: 1rem;
+
+        }
+
+        .callout{
+        background-color: #F8F3F1;
+        border-radius: 20px;
+        padding: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-top:6rem;
+        margin-bottom: 3rem;
+        justify-content: center;
+        display: flex;
+        color: #A94112;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        opacity: .8;
+      }
+
+      /* SIDE PANEL */
+      button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      all: unset;
+
+      }
+
+      #togglePanelButton {
+        width: 36px;
+        display: initial;
+        position: fixed;
+        z-index: 6000; 
+        top: 90%;
+        right: calc(100% - 4rem);
+        border-radius: 50%;
+        transition: transform 0.2s ease, left 0.2s ease;
+        margin: 0;
+        padding: 0;
+      }
+
+      .rotated {
+        transform: rotate(180deg);
+        /* left: calc(1rem + 300px);  */
+      }
+
+      .side-panel {
+        display: block;
+        position: fixed;
+        /* top: 0; */
+        left: -300px; /* Hidden by default */
+        width: 300px;
+        bottom: 0;
+        height: calc(100% - 55px);
+        background-color: #F8F3F1;
+        z-index: 5000;
+        color: #A94112;
+        overflow-x: hidden;
+        transition: left 0.3s ease; /* Smooth opening */
+      }
+
+      .side-panel.open {
+        left: 0; /* Slide into view */
+      }
+
+      .side-panel h2, .side-panel p {
+        padding: 20px;
+      }
+      }
+
+      
+
+  </style>
+</head>
+<body>
+    <header>
+      <!-- style="margin-top: -10px; height: 55px;" -->
+        <nav  class="navbar navbar-expand-sm"> 
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img style ="height: 40px; margin-top: -10px;" src="beecopy.png"/>
+            </a>
+            <div class="logo">
+              BEE'S THAI CUISINE
+            </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto  my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 120px;">
+                  <li class="nav-item">
+                    <a class="nav-link-bootleg" href="#">About</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link-bootleg active" href="#">Menu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link-bootleg" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+        </nav>
+    </header>
+    <main >
+      <div class="page">
+      <div class="page-container" >
+        <div id="sidePanel" class="side-panel">
+          <div class="menu-button">
+            <a href="#appetizers">
+            APPETIZERS
+            </a>
+          </div>
+          <div class="menu-button">
+            <a href="#soups">
+            SOUPS
+            </a>
+          </div><div class="menu-button">
+            <a href="#salads">
+            SALADS
+            </a>
+          </div><div class="menu-button">
+            <a href="#curry-dishes">
+            CURRY DISHES
+            </a>
+          </div><div class="menu-button">
+            <a href="#entres">
+            ENTRES
+            </a>
+          </div><div class="menu-button">
+            <a href="#sides">
+            SIDES
+            </a>
+          </div><div class="menu-button">
+            <a href="#lunch-special">
+            LUNCH SPECIAL
+            </a>
+          </div><div class="menu-button">
+            <a href="#served-all-day">
+            SERVED ALL DAY
+            </a>
+          </div><div class="menu-button">
+            <a href="#chef-special">
+            CHEF SPECIAL
+            </a>
+          </div><div class="menu-button">
+            <a href="#healthy-corner">
+            HEALTHY CORNER
+            </a>
+          </div><div class="menu-button">
+            <a href="#beverages">
+            BEVERAGES
+            </a>
+          </div><div class="menu-button">
+            <a href="#beer-and-wine">
+            BEER AND WINE
+            </a>
+          </div><div class="menu-button">
+            <a href="#dessert">
+            DESSERT
+            </a>
+          </div>
+        </div>
+        <button id="togglePanelButton"> 
+          <svg style="background-color:#A94112; border-radius:50%; box-shadow: 0px 0px 5px #6f2d0e;" id="rightArrow" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+          </svg>
+        </button>
+        <div class="menu-nav">
+          <div class="menu-button">
+            <a href="#appetizers">
+            APPETIZERS
+            </a>
+          </div>
+          <div class="menu-button">
+            <a href="#soups">
+            SOUPS
+            </a>
+          </div><div class="menu-button">
+            <a href="#salads">
+            SALADS
+            </a>
+          </div><div class="menu-button">
+            <a href="#curry-dishes">
+            CURRY DISHES
+            </a>
+          </div><div class="menu-button">
+            <a href="#entres">
+            ENTRES
+            </a>
+          </div><div class="menu-button">
+            <a href="#sides">
+            SIDES
+            </a>
+          </div><div class="menu-button">
+            <a href="#lunch-special">
+            LUNCH SPECIAL
+            </a>
+          </div><div class="menu-button">
+            <a href="#served-all-day">
+            SERVED ALL DAY
+            </a>
+          </div><div class="menu-button">
+            <a href="#chef-special">
+            CHEF SPECIAL
+            </a>
+          </div><div class="menu-button">
+            <a href="#healthy-corner">
+            HEALTHY CORNER
+            </a>
+          </div><div class="menu-button">
+            <a href="#beverages">
+            BEVERAGES
+            </a>
+          </div><div class="menu-button">
+            <a href="#beer-and-wine">
+            BEER AND WINE
+            </a>
+          </div><div class="menu-button">
+            <a href="#dessert">
+            DESSERT
+            </a>
+          </div>
+        </div>
+        <div class="left-panel">
+        <div>
+        <div class="callout">
+            <div style="max-width: 800px;">
+            WE ARE NOT BYOB. WE SERVE BEER AND WINE
+            <br/>Please inform sever if your party has any food allergies. 
+            <br/>Spice levels may be modified. 
+            <br/>Gluten Free, Vegan, and vegetarian options may be accommodated please inform our servers. 
+            <br/>Parties that are 6 and up will have a service charge of 20% included on the bill. 
+            <br/>Tap pay and card payments will receive a NCA tax and cash payments will be excluded from NCA tax. 
+            <br/>
+            </div>
+        </div>
+        
+        <div class="section-title" id="appetizers">
+          APPETIZERS
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="spice.png" alt="Mild"/>
+                  <span class="b-tooltip-text">Spicy</span>
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title" id="soups">
+          SOUPS
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="salads">
+          SALADS
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="curry-dishes">
+          CURRY DISHES
+        </div>
+        <div class="section-description">
+          <div style="max-width: 800px; text-align: center;">
+            All served with white rice or for $1 more to sub for Brown rice, sticky rice, or steam noodles. Dishes Spice level may be modified
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="entres">
+          ENTRES
+        </div>
+        <div class="section-description">
+          <div style="max-width: 800px; text-align: center;">
+            Stir fried Noddles and Fried rice. Spice level on dishes may be modified and Vegan, Vegetarian, and Gluten free options are available. Please ask server questions.
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="sides">
+          SIDES
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="lunch-special">
+          LUNCH SPECIAL
+        </div>
+        <div class="section-description">
+          <div style="max-width: 800px; text-align: center;">
+            Served only during lunch hours 11:30am-3:00Pm Mon-Fri : Holidays we do not serve our lunch special
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="served-all-day">
+          SERVED ALL DAY
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="chef-special">
+          CHEF SPECIAL
+        </div>
+        <div class="section-description">
+          <div style="max-width: 800px; text-align: center;">
+            All dishes in this section are served with a Jasmine rice or for $1 more Brown rice, Sticky rice, or Steam noodles
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="healthy-corner">
+          HEALTHY CORNER
+        </div>
+        <div class="section-description">
+          <div style="max-width: 800px; text-align: center;">
+            Served with a side of jasmine rice for $1 to sub for Brown rice, Sticky rice, Steam noodles
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="beverages">
+          BEVERAGES
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="beer-and-wine">
+          BEER AND WINE
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-title" id="dessert">
+          DESSERT
+        </div>
+        <div class="section">
+          <div class="section-container">
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+      </div>
+    </main>
+    <footer>
+        <!-- <p style="color: rgb(75, 75, 75);">&copy; footer</p> -->
+    </footer>
+    <!-- Link to external JavaScript file -->
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    const toggleButton = document.getElementById('togglePanelButton');
+    const sidePanel = document.getElementById('sidePanel');
+
+    toggleButton.addEventListener('click', function () {
+      if (sidePanel.classList.contains('open')) {
+        toggleButton.classList.remove('rotated');
+        sidePanel.classList.remove('open');
+
+      } else {
+        toggleButton.classList.add('rotated');
+        sidePanel.classList.add('open');
+
+      }
+    });
+    </script>
+</body>
+</html>
