@@ -81,8 +81,8 @@ img, picture, video, canvas, svg{
 
 .section-navigation{
   position: fixed;
-  top: 50%;
-  left: 1rem;
+  top: 60px;
+  left: 2rem;
   z-index: 1000;
   margin: 0rem;
   width: 150px
@@ -107,6 +107,21 @@ img, picture, video, canvas, svg{
   color: var(--base-text);
   padding-top: 3rem;
   padding-left: 13rem;
+  /* padding-left: 4rem; */
+  padding-right: 4rem;
+  margin-bottom: 10rem;
+  max-width: 1500px;
+  width: auto;
+}
+
+.section-first{
+  overflow: hidden;
+  min-height: 100vh;
+  background: var(--base-bg);
+  color: var(--base-text);
+  padding-top: 3rem;
+  padding-left: 13rem;
+  /* padding-left: 4rem; */
   padding-right: 4rem;
   margin-bottom: 10rem;
   max-width: 1500px;
@@ -160,6 +175,18 @@ img, picture, video, canvas, svg{
     max-width: 1500px;
     width: auto;
   }
+
+  .section-first{
+    overflow: hidden;
+    background: var(--base-bg);
+    color: var(--base-text);
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1500px;
+    width: auto;
+    min-height: 100vh;
+  }
   
   .section-navigation{
     position: fixed;
@@ -174,10 +201,6 @@ img, picture, video, canvas, svg{
 
   @media (max-width: 500px){
     .section-navigation{
-      display: none;
-    }
-
-    table{
       display: none;
     }
   }

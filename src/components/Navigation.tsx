@@ -21,10 +21,11 @@ function Navigation({refs, titles}: NavigationProps) {
 
   return (
     <Accordion 
-        defaultActiveKey="0"
+        // defaultActiveKey="0"
         className="section-navigation"
         >
-        <Accordion.Item eventKey="0"
+        <Accordion.Item 
+        eventKey="0"
         style={{
             backgroundColor: "transparent",
             border: "none"

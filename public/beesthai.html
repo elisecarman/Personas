@@ -94,6 +94,8 @@
         color: #A94112;
       }
 
+      
+
       /* .menu-nav{
         top: 65px;
         display: flex;
@@ -150,7 +152,6 @@
         background-color: #A94112;
         color: #F8F3F1;
       }
-
 
       .callout{
         background-color: #F8F3F1;
@@ -239,6 +240,32 @@
       .section-item-icons{
         display: flex;
         justify-content: center;
+      }
+
+      .b-tooltip {
+       visibility: visible;
+       margin: 0.2rem;
+      }
+
+      .b-tooltip-text {
+        visibility: hidden;
+        background-color: #A94112;
+        color: #F8F3F1;
+        position: absolute;
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 5px;
+        width: 110px;
+        margin-top: 45px;
+        margin-left: -77px;
+        /* transform: translateX(-70%) translateY(-40px); */
+        opacity: 0;
+        transition: opacity 0.3s; 
+      }
+
+      .b-tooltip:hover .b-tooltip-text {
+        visibility: visible;
+        opacity: 0.9;
       }
 
       .icon{
@@ -466,7 +493,7 @@
         <nav  class="navbar navbar-expand-sm"> 
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
-              <img style ="height: 40px; margin-top: -10px;" src="/Users/Elise/Desktop/code/InteractionDesign-New/src/assets/responsive-redesign/bee.PNG"/>
+              <img style ="height: 40px; margin-top: -10px;" src="beecopy.png"/>
             </a>
             <div class="logo">
               BEE'S THAI CUISINE
@@ -663,42 +690,9 @@
                 </div>
               </div>
               <div class="section-item-icons">
-                <img class="icon" src="/Users/Elise/Desktop/code/InteractionDesign-New/src/assets/responsive-redesign/gluten.png"/>
-                <img class="icon" src="/Users/Elise/Desktop/code/InteractionDesign-New/src/assets/responsive-redesign/vegan.png"/>
-                
-              </div>
-            </div>
-            <div class="section-item">
-              <div>BROCCOLI</div>
-              <div style="margin-bottom: 1rem;">Broccoli</div>
-              <div class="section-item-protein ">
-                <div>Vegetable</div>
-                <div style="width: 50px">
-                  $11.95
-                </div>
-              </div>
-              <div class="section-item-protein">
-                <div>Tofu</div>
-                <div style="width: 50px">
-                  $11.95
-                </div>
-              </div>
-              <div class="section-item-protein">
-                  <div>Chicken</div>
-                  <div style="width: 50px">
-                    $11.95
-                  </div>
-              </div>
-              <div class="section-item-protein">
-                <div>Pork</div>
-                <div style="width: 50px">
-                  $11.95
-                </div>
-              </div>
-              <div class="section-item-protein">
-                <div>Beef</div>
-                <div style="width: 50px">
-                  $12.95
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="spice.png" alt="Mild"/>
+                  <span class="b-tooltip-text">Spicy</span>
                 </div>
               </div>
             </div>
@@ -735,38 +729,20 @@
                   $12.95
                 </div>
               </div>
-            </div>
-            <div class="section-item">
-              <div>BROCCOLI</div>
-              <div style="margin-bottom: 1rem;">Broccoli</div>
-              <div class="section-item-protein ">
-                <div>Vegetable</div>
-                <div style="width: 50px">
-                  $11.95
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
                 </div>
-              </div>
-              <div class="section-item-protein">
-                <div>Tofu</div>
-                <div style="width: 50px">
-                  $11.95
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
                 </div>
-              </div>
-              <div class="section-item-protein">
-                  <div>Chicken</div>
-                  <div style="width: 50px">
-                    $11.95
-                  </div>
-              </div>
-              <div class="section-item-protein">
-                <div>Pork</div>
-                <div style="width: 50px">
-                  $11.95
-                </div>
-              </div>
-              <div class="section-item-protein">
-                <div>Beef</div>
-                <div style="width: 50px">
-                  $12.95
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
                 </div>
               </div>
             </div>
@@ -803,38 +779,20 @@
                   $12.95
                 </div>
               </div>
-            </div>
-            <div class="section-item">
-              <div>BROCCOLI</div>
-              <div style="margin-bottom: 1rem;">Broccoli</div>
-              <div class="section-item-protein ">
-                <div>Vegetable</div>
-                <div style="width: 50px">
-                  $11.95
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
                 </div>
-              </div>
-              <div class="section-item-protein">
-                <div>Tofu</div>
-                <div style="width: 50px">
-                  $11.95
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
                 </div>
-              </div>
-              <div class="section-item-protein">
-                  <div>Chicken</div>
-                  <div style="width: 50px">
-                    $11.95
-                  </div>
-              </div>
-              <div class="section-item-protein">
-                <div>Pork</div>
-                <div style="width: 50px">
-                  $11.95
-                </div>
-              </div>
-              <div class="section-item-protein">
-                <div>Beef</div>
-                <div style="width: 50px">
-                  $12.95
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
                 </div>
               </div>
             </div>
@@ -871,6 +829,22 @@
                   $12.95
                 </div>
               </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
             </div>
             <div class="section-item">
               <div>BROCCOLI</div>
@@ -903,6 +877,172 @@
                 <div>Beef</div>
                 <div style="width: 50px">
                   $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
+                </div>
+              </div>
+            </div>
+            <div class="section-item">
+              <div>BROCCOLI</div>
+              <div style="margin-bottom: 1rem;">Broccoli</div>
+              <div class="section-item-protein ">
+                <div>Vegetable</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Tofu</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                  <div>Chicken</div>
+                  <div style="width: 50px">
+                    $11.95
+                  </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Pork</div>
+                <div style="width: 50px">
+                  $11.95
+                </div>
+              </div>
+              <div class="section-item-protein">
+                <div>Beef</div>
+                <div style="width: 50px">
+                  $12.95
+                </div>
+              </div>
+              <div class="section-item-icons">
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="gluten.png" alt="Gluten free"/>
+                  <span class="b-tooltip-text">Gluten free</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="vegan.png" alt="Vegan"/>
+                  <span class="b-tooltip-text">Vegan</span>
+                </div>
+
+                <div class="b-tooltip">
+                  <img style="height: 40px; width: 40px;" class="icon" src="veget.png" alt="Vegetarian"/>
+                  <span class="b-tooltip-text">Vegetarian</span>
                 </div>
               </div>
             </div>

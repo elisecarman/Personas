@@ -4,7 +4,7 @@ import Callout from "../components/Callout"
 function NotFound() {
 
     return(
-        <Section>
+        <Section first={false}>
             <Callout>Not Found :( </Callout>
         </Section>
     )
