@@ -24,7 +24,7 @@ function Navigation({refs, titles}: NavigationProps) {
         // defaultActiveKey="0"
         className="section-navigation"
         >
-        <a href="file:///Users/Elise/Desktop/code/portfolio%20website/projects.html"><h1 className='home'>Home</h1></a>
+        <a href="https://elisecarman.github.io/UIUXportfolio/"><h1 className='home'>Home</h1></a>
 
         <Accordion.Item 
         eventKey="0"

@@ -18,6 +18,7 @@ import supermarket from "../assets/personas/supermarket.png"
 import Section from "../components/Section";
 import Callout from "../components/Callout";
 import Navigation from "../components/Navigation";
+import phoneguy from "../assets/portfolio/phone-guy.png";
 
 function Personas() {
     const section1Ref = useRef(null);
@@ -104,8 +105,8 @@ function Personas() {
                     Let's study different user behaviors in supermarkets, and find out more about our user needs!
                 </Callout>
                 </Col>
-                <Col>
-                    <Image style={{position: "absolute", width: "800px", marginTop: "-50px", marginLeft: "-100px", zIndex: 1}} src="src/assets/portfolio/phone-guy.png"></Image>
+                <Col xs={0} md={6}>
+                    <Image style={{position: "absolute", width: "800px", marginTop: "-50px", marginLeft: "-100px", zIndex: 1}} src={phoneguy}></Image>
                 </Col>
                 </Row>
             </Section>
